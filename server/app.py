@@ -499,7 +499,7 @@ async function refreshMachines(){
   </div>`).join('');}catch(e){}}
 
 function selectMachine(id,name){
-  sel=id;resultTs=time.now||0;resultTs=Date.now()/1000-5;
+  sel=id;resultTs=Date.now()/1000-5;
   document.getElementById('controlPanel').style.display='block';
   document.getElementById('selName').textContent=name;
   buf=[];log('Connected to '+name+' ('+id+')');
