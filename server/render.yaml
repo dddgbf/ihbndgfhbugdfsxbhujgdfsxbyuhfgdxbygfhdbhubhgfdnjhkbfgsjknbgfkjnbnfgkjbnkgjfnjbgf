@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: nexus-relay
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 4 --threads 4
+    envVars:
+      - key: DASH_USER
+        value: admin
+      - key: DASH_PASS
+        value: admin123
+      - key: RELAY_SECRET
+        value: changeme-secret-key
+      - key: SECRET_KEY
+        generateValue: true
